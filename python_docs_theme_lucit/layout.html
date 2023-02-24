@@ -110,10 +110,10 @@
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
             <p class="logo">
-                <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                <p>
+                <div style="text-align: center;">
+                    <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
                     <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                </p>
+                </div>
             </p>
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
@@ -138,10 +138,10 @@
         <div class="sphinxsidebarwrapper">
           {%- block sidebarlogo %}
             <p class="logo">
+                <div style="text-align: center;">
                 <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                <p>
                     <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                </p>
+                </div>
             </p>
           {%- endblock %}
           {%- if sidebars != None %}
@@ -167,15 +167,15 @@
             {%- include "searchbox.html" %}
             {%- endblock %}
           {%- endif %}
-            <div role="note" aria-label="source code">
+        </div>
+                    <div role="note" aria-label="source code">
                 <h3>GitHub</h3>
                 <ul class="this-page-menu">
                   <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
                   {% include "github.html" %}
                 </ul>
             </div>
-        </div>
-        {%- block sidebarextra %}{%- endblock %}
+          {%- block sidebarextra %}{%- endblock %}
       </div>
       {%- endif %}
 {%- endmacro %}
