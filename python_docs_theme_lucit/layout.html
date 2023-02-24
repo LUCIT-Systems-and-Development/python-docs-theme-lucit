@@ -18,10 +18,6 @@
           </li>
           {%- endfor %}
           {%- block rootrellink %}
-              <script
-                  src='//eu.fw-cdn.com/10659511/361973.js'
-                  chat='true'>
-              </script>
               {% if github_repo_name %}
                   {% if not lucit %}
               <li><img src="{{ pathto('_static/' + theme_github_icon, 1) }}" alt="GitHub Logo"
@@ -35,7 +31,7 @@
                   {% endif %}
               {% endif %}
               {% if theme_root_include_title %}
-              <!-- <a href="{{ pathto('index') }}">{{shorttitle}}</a>{{reldelim1}} //-->
+              <a href="{{ pathto('index') }}">Docs</a>{{reldelim1}}
               {% endif %}
           {%- endblock %}
             {%- for parent in parents %}
@@ -43,19 +39,12 @@
                 {%- endfor %}
                 <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
             {% block relbaritems %}
-
+            {%- if pagename != "search" and builder != "singlehtml" and builder != "htmlhelp" %}
                 <li class="right">
                     {{ searchbox() }}
-                    <div style="text-align: center">
-                        <br>
-                        <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                        <p>
-                            <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                        </p>
-                    </div>
                     {{ reldelim2 }}
                 </li>
-
+            {%- endif %}
             {% endblock %}
       </ul>
     </div>
@@ -77,7 +66,6 @@
 
 {% block relbar1 %} {% if builder != 'qthelp' %} {{ relbar() }} {% endif %} {% endblock %}
 {% block relbar2 %} {% if builder != 'qthelp' %} {{ relbar() }} {% endif %} {% endblock %}
-
 
 {%- block extrahead -%}
     <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/' + theme_lucit_icon, 1) }}" />
@@ -106,9 +94,6 @@
         <span></span>
     </label>
     <nav class="nav-content" role="navigation">
-         <a href="{{ theme_root_url }}" class="nav-logo">
-             <img src="{{ pathto('_static/py.svg', 1) }}" alt="Logo"/>
-         </a>
         <div class="version_switcher_placeholder"></div>
         {%- if pagename != "search" and builder != "singlehtml" %}
         <form role="search" class="search" action="{{ pathto('search') }}" method="get">
@@ -134,6 +119,22 @@
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
             {%- endfor %}
+                           <div role="note" aria-label="source code">
+                    <h3>GitHub</h3>
+                    <ul class="this-page-menu">
+                      <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
+                      {% include "github.html" %}
+                    </ul>
+                </div>
+                <li class="right">
+                    <div style="text-align: center">
+                        <br>
+                        <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
+                        <p>
+                            <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
+                        </p>
+                    </div>
+                </li>
         </nav>
     </div>
 </div>
