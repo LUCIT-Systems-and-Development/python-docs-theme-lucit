@@ -30,7 +30,7 @@
 # IN THE SOFTWARE.
 
 security-check() {
-    echo -n "Did you change the version in \`setup.py\`? [yes|NO] "
+    echo -n "Did you change the version in \`setup.py\` and \`pyproject.toml\`? [yes|NO] "
     local SURE
     read SURE
     if [ "$SURE" != "yes" ]; then

@@ -8,7 +8,7 @@ with io.open('README.md', encoding='utf-8') as readme_file:
 
 setup(
     name='python-docs-theme-lucit',
-    version='1.0.0',
+    version='1.0.3',
     description='A responsive sphinx theme for github pages based on python-docs-theme for LUCIT docs',
     long_description=long_description,
     long_description_content_type="text/markdown",

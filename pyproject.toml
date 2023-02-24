@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 # project metadata
 [project]
 name = "python-docs-theme-lucit"
-version = "1.0.0"
+version = "1.0.3"
 description = "The Sphinx theme for the CPython docs and related projects"
 readme = "README.md"
 urls.Code = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
@@ -33,16 +33,16 @@ classifiers = [
 ]
 
 [[project.authors]]
-name = "PyPA"
-email = "distutils-sig@python.org"
+name = "LUCIT"
+email = "info@lucit.tech"
 
 [project.entry-points."sphinx.html_themes"]
-python_docs_theme = 'python_docs_theme'
+python_docs_theme = 'python_docs_theme_lucit'
 
 [tool.flit.module]
-name = "python_docs_theme"
+name = "python_docs_theme_lucit"
 
 [tool.flit.sdist]
 include = [
-    "python_docs_theme/",
+    "python_docs_theme_lucit/",
 ]

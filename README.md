@@ -25,7 +25,7 @@ Settings for source/conf.py:
 tml_theme = 'python_docs_theme_lucit'
 html_context = {'github_repo_name': 'unicorn-binance-suite',
                 'github_user_name': 'LUCIT-Systems-and-Development',
-                'project_name': 'unicorn-binance-websocket-api'}
+                'project_name': project}
 ```
 Demo conf.py: https://github.com/LUCIT-Systems-and-Development/python-simplemachinesforum/blob/master/sphinx/source/conf.py
 
