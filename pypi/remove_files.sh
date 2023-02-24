@@ -30,4 +30,4 @@
 
 rm ./build -r
 rm ./dist -r
-rm ./python_docs_theme_technopathy.egg-info -r
+rm ./python_docs_theme_lucit.egg-info -r

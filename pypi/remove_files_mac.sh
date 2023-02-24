@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 #
-# File: pypi/create_wheel.sh
+# File: pypi/remove_files.sh
 #
 # Author: Oliver Zehentleitner
 #         https://about.me/oliver-zehentleitner
 #
-# Copyright (c) 2023, LUCIT and
-# Oliver Zehentleitner
+# Copyright (c) 2019, Oliver Zehentleitner
 # All rights reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
@@ -29,15 +28,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-security-check() {
-    echo -n "Did you change the version in \`setup.py\`? [yes|NO] "
-    local SURE
-    read SURE
-    if [ "$SURE" != "yes" ]; then
-        exit 1
-    fi
-    echo "ok, lets go ..."
-}
-
-security-check
-python3 setup.py bdist_wheel sdist
+rm -r ./build
+rm -r ./dist
+rm -r ./python_docs_theme_lucit.egg-info

@@ -4,14 +4,14 @@ build-backend = "flit_core.buildapi"
 
 # project metadata
 [project]
-name = "python-docs-theme"
-version = "2022.1"
+name = "python-docs-theme-lucit"
+version = "1.0.0"
 description = "The Sphinx theme for the CPython docs and related projects"
-readme = "README.rst"
-urls.Code = "https://github.com/python/python-docs-theme"
-urls.Download = "https://pypi.org/project/python-docs-theme/"
-urls.Homepage = "https://github.com/python/python-docs-theme/"
-urls."Issue tracker" = "https://github.com/python/python-docs-theme/issues"
+readme = "README.md"
+urls.Code = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
+urls.Download = "https://pypi.org/project/python-docs-theme-lucit/"
+urls.Homepage = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
+urls."Issue tracker" = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit/issues"
 license.text = "PSF-2.0"
 requires-python = ">=3.8"
 
