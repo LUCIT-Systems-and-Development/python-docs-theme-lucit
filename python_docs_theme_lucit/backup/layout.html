@@ -18,44 +18,29 @@
           </li>
           {%- endfor %}
           {%- block rootrellink %}
-              <script
-                  src='//eu.fw-cdn.com/10659511/361973.js'
-                  chat='true'>
-              </script>
-              {% if github_repo_name %}
-                  {% if not lucit %}
-              <li><img src="{{ pathto('_static/' + theme_github_icon, 1) }}" alt="GitHub Logo"
-                       style="vertical-align: middle; margin-top: -1px"/></li>
-              <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">{{project_name}}</a>{{ reldelim1 }}</li>
-                  {% endif %}
-                  {% if lucit %}
-              <li><img src="{{ pathto('_static/' + theme_lucit_icon, 1) }}" alt="LUCIT Logo"
-                       style="vertical-align: middle; margin-top: -1px"/></li>
-              <li><a href="https://www.lucit.tech/{{github_repo_name}}.html">{{project_name}}</a>{{reldelim1}}</li>
-                  {% endif %}
-              {% endif %}
+          <li><img src="{{ pathto('_static/py.svg', 1) }}" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><a href="{{theme_root_url}}">{{theme_root_name}}</a>{{ reldelim1 }}</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
               {% if theme_root_include_title %}
-              <!-- <a href="{{ pathto('index') }}">{{shorttitle}}</a>{{reldelim1}} //-->
+              <a href="{{ pathto('index') }}">{{ shorttitle }}</a>{{ reldelim1 }}
               {% endif %}
+          </li>
           {%- endblock %}
             {%- for parent in parents %}
                 <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
                 {%- endfor %}
                 <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
             {% block relbaritems %}
-
+            {%- if pagename != "search" and builder != "singlehtml" and builder != "htmlhelp" %}
                 <li class="right">
                     {{ searchbox() }}
-                    <div style="text-align: center">
-                        <br>
-                        <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                        <p>
-                            <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                        </p>
-                    </div>
                     {{ reldelim2 }}
                 </li>
-
+            {%- endif %}
             {% endblock %}
       </ul>
     </div>
@@ -80,8 +65,7 @@
 
 
 {%- block extrahead -%}
-    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/' + theme_lucit_icon, 1) }}" />
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/' + theme_root_icon, 1) }}" />
     {%- if builder != "htmlhelp" %}
         {%- if not embedded %}
             <script type="text/javascript" src="{{ pathto('_static/copybutton.js', 1) }}"></script>
@@ -159,8 +143,5 @@
     <br />
 
     {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-        with <a href="https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit">python-docs-theme-lucit</a>
-        by <a href="https://www.lucit.tech">LUCIT Systems and Development</a>
     </div>
-    <img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.lucit.co/matomo.php?idsite=3&amp;rec=1" style="border:0" alt="" />
 {% endblock %}
