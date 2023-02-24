@@ -110,7 +110,6 @@
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
-            <div class="language_switcher_placeholder"></div>
             {%- if logo %}
             <p class="logo">
                 <a href="{{ pathto('index') }}">
@@ -153,7 +152,7 @@
     <br />
     {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
         with <a href="https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit">python-docs-theme-lucit</a>
-        by <a href="https://www.lucit.tech">LUCIT Systems and Development</a>
+        by <a href="https://www.lucit.tech">LUCIT Systems and Development</a>.
     </div>
     {% if matomo_url %}
     <img referrerpolicy="no-referrer-when-downgrade" src="{{ matomo_url }}" style="border:0" alt="" />
