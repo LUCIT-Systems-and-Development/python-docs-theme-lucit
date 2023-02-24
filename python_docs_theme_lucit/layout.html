@@ -109,13 +109,12 @@
     </nav>
     <div class="menu-wrapper">
         <nav class="menu" role="navigation" aria-label="main navigation">
-            {%- if logo %}
             <p class="logo">
-                <a href="{{ pathto('index') }}">
-                <img class="logo" src="{{ pathto('_static/' + logo, 1)|e }}" alt="Logo"/>
-                </a>
+                <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
+                <p>
+                    <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
+                </p>
             </p>
-            {%- endif %}
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
             {%- endfor %}
@@ -124,11 +123,6 @@
                 <ul class="this-page-menu">
                   <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
                   {% include "github.html" %}
-                    <br>
-                    <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                    <p>
-                        <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                    </p>
                 </ul>
             </div>
         </nav>
