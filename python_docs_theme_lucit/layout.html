@@ -148,6 +148,7 @@
             {#- new style sidebar: explicitly include/exclude templates #}
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
+            {%- include "searchbox.html" %}
             {%- endfor %}
           {%- else %}
             {#- old style sidebars: using blocks -- should be deprecated #}
@@ -159,6 +160,7 @@
             {%- endblock %}
             {%- block sidebarsourcelink %}
             {%- include "sourcelink.html" %}
+            {%- include "searchbox.html" %}
             {%- endblock %}
             {%- if customsidebar %}
             {%- include customsidebar %}
@@ -167,13 +169,11 @@
             {%- include "searchbox.html" %}
             {%- endblock %}
           {%- endif %}
-          {%- include "searchbox.html" %}
         </div>
           {%- block sidebarextra %}{%- endblock %}
       </div>
       {%- endif %}
 {%- endmacro %}
-
 
 {% block footer %}
     <div class="footer">
