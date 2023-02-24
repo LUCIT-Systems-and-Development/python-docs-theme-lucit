@@ -2,10 +2,6 @@
 
 {%- macro relbar() %}
 {# modified from sphinx/themes/basic/layout.html #}
-    <script
-        src='//eu.fw-cdn.com/10659511/361973.js'
-        chat='true'>
-    </script>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>{{ _('Navigation') }}</h3>
       <ul>
@@ -70,6 +66,12 @@
 {%- block extrahead -%}
     <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/' + theme_lucit_icon, 1) }}" />
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {% if freshchat_src %}
+    <script
+        src='{{ freshchat_src }}'
+        chat='true'>
+    </script>
+    {% endif %}
     {%- if builder != "htmlhelp" %}
         {%- if not embedded %}
             <script type="text/javascript" src="{{ pathto('_static/copybutton.js', 1) }}"></script>
@@ -119,22 +121,22 @@
             {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
             {%- endfor %}
-                           <div role="note" aria-label="source code">
-                    <h3>GitHub</h3>
-                    <ul class="this-page-menu">
-                      <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
-                      {% include "github.html" %}
-                    </ul>
+            <div role="note" aria-label="source code">
+                <h3>GitHub</h3>
+                <ul class="this-page-menu">
+                  <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
+                  {% include "github.html" %}
+                </ul>
+            </div>
+            <li class="right">
+                <div style="text-align: center">
+                    <br>
+                    <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
+                    <p>
+                        <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
+                    </p>
                 </div>
-                <li class="right">
-                    <div style="text-align: center">
-                        <br>
-                        <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
-                        <p>
-                            <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
-                        </p>
-                    </div>
-                </li>
+            </li>
         </nav>
     </div>
 </div>
@@ -144,24 +146,16 @@
 {% block footer %}
     <div class="footer">
     &copy; {% if theme_copyright_url or hasdoc('copyright') %}<a href="{% if theme_copyright_url %}{{ theme_copyright_url }}{% else %}{{ pathto('copyright') }}{% endif %}">{% endif %}{% trans %}Copyright{% endtrans %}{% if theme_copyright_url or hasdoc('copyright') %}</a>{% endif %} {{ copyright|e }}.
+    {% if theme_license_url %}{% trans license_file=theme_license_url %}See <a href="{{ license_file }}">License</a> for more information.{% endtrans %}<br />{% endif %}
     <br />
-    {% trans %}This page is licensed under the Python Software Foundation License Version 2.{% endtrans %}
-    <br />
-    {% trans %}Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.{% endtrans %}
-    <br />
-    {% if theme_license_url %}{% trans license_file=theme_license_url %}See <a href="{{ license_file }}">History and License</a> for more information.{% endtrans %}<br />{% endif %}
-    <br />
-
-    {% include "footerdonate.html" %}
-    <br />
-
     {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
     {% if theme_issues_url %}{% trans %}<a href="{{ theme_issues_url }}">Found a bug</a>?{% endtrans %}{% endif %}
     <br />
-
     {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
         with <a href="https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit">python-docs-theme-lucit</a>
         by <a href="https://www.lucit.tech">LUCIT Systems and Development</a>
     </div>
-    <img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.lucit.co/matomo.php?idsite=3&amp;rec=1" style="border:0" alt="" />
+    {% if matomo_url %}
+    <img referrerpolicy="no-referrer-when-downgrade" src="{{ matomo_url }}" style="border:0" alt="" />
+    {% endif %}
 {% endblock %}
