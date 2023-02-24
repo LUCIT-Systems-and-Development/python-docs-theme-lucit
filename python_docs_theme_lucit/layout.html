@@ -96,7 +96,6 @@
         <span></span>
     </label>
     <nav class="nav-content" role="navigation">
-        <div class="version_switcher_placeholder"></div>
         {%- if pagename != "search" and builder != "singlehtml" %}
         <form role="search" class="search" action="{{ pathto('search') }}" method="get">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
@@ -125,17 +124,13 @@
                 <ul class="this-page-menu">
                   <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
                   {% include "github.html" %}
-                </ul>
-            </div>
-            <li class="right">
-                <div style="text-align: center">
                     <br>
                     <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
                     <p>
                         <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
                     </p>
-                </div>
-            </li>
+                </ul>
+            </div>
         </nav>
     </div>
 </div>
