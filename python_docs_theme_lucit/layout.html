@@ -131,6 +131,56 @@
 {% endif -%}
 {% endblock %}
 
+
+{%- macro sidebar() %}
+      {%- if render_sidebar %}
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+          {%- block sidebarlogo %}
+            <p class="logo">
+                <a href="https://www.lucit.tech"><img src="https://www.lucit.tech/files/images/logos/LUCIT-LOGO.png"></a>
+                <p>
+                    <a href="https://www.lucit.tech/trading-tools.html" style="font-size: 0.85em;font-weight: 900">Tailored Bots for Your Unique Trading Needs</a>
+                </p>
+            </p>
+          {%- endblock %}
+          {%- if sidebars != None %}
+            {#- new style sidebar: explicitly include/exclude templates #}
+            {%- for sidebartemplate in sidebars %}
+            {%- include sidebartemplate %}
+            {%- endfor %}
+          {%- else %}
+            {#- old style sidebars: using blocks -- should be deprecated #}
+            {%- block sidebartoc %}
+            {%- include "localtoc.html" %}
+            {%- endblock %}
+            {%- block sidebarrel %}
+            {%- include "relations.html" %}
+            {%- endblock %}
+            {%- block sidebarsourcelink %}
+            {%- include "sourcelink.html" %}
+            {%- endblock %}
+            {%- if customsidebar %}
+            {%- include customsidebar %}
+            {%- endif %}
+            {%- block sidebarsearch %}
+            {%- include "searchbox.html" %}
+            {%- endblock %}
+          {%- endif %}
+            <div role="note" aria-label="source code">
+                <h3>GitHub</h3>
+                <ul class="this-page-menu">
+                  <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
+                  {% include "github.html" %}
+                </ul>
+            </div>
+        </div>
+        {%- block sidebarextra %}{%- endblock %}
+      </div>
+      {%- endif %}
+{%- endmacro %}
+
+
 {% block footer %}
     <div class="footer">
     &copy; {% if theme_copyright_url or hasdoc('copyright') %}<a href="{% if theme_copyright_url %}{{ theme_copyright_url }}{% else %}{{ pathto('copyright') }}{% endif %}">{% endif %}{% trans %}Copyright{% endtrans %}{% if theme_copyright_url or hasdoc('copyright') %}</a>{% endif %} {{ copyright|e }}.
