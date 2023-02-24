@@ -28,6 +28,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-rm -r ./build
 rm -r ./dist
-rm -r ./python_docs_theme_lucit.egg-info
+
