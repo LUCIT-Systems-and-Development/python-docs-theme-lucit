@@ -160,6 +160,13 @@
             {%- block sidebarsourcelink %}
             {%- include "sourcelink.html" %}
             {%- endblock %}
+            <div style="text-align: center;">
+                <h3>GitHub</h3>
+                <ul class="this-page-menu">
+                  <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
+                  {% include "github.html" %}
+                </ul>
+            </div>
             {%- if customsidebar %}
             {%- include customsidebar %}
             {%- endif %}
@@ -169,13 +176,6 @@
           {%- endif %}
         </div>
           {%- block sidebarextra %}{%- endblock %}
-            <div style="text-align: center;">
-                <h3>GitHub</h3>
-                <ul class="this-page-menu">
-                  <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">Show Source</a></li>
-                  {% include "github.html" %}
-                </ul>
-            </div>
       </div>
       {%- endif %}
 {%- endmacro %}
