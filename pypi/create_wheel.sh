@@ -30,7 +30,7 @@
 # IN THE SOFTWARE.
 
 security-check() {
-    echo -n "Did you change the version in \`setup.py\` and \`pyproject.toml\`? [yes|NO] "
+    echo -n "Did you change the version in \`pyproject.toml\`? [yes|NO] "
     local SURE
     read SURE
     if [ "$SURE" != "yes" ]; then
@@ -40,4 +40,6 @@ security-check() {
 }
 
 security-check
-python3 setup.py bdist_wheel sdist
+
+# pip3 install --upgrade build
+python3 -m build . --wheel
