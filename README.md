@@ -12,7 +12,7 @@ Forked from https://github.com/python/python-docs-theme
 
 To use the theme, install it into your docs build environment via `pip`:
 ```
-pip install python-docs-theme-technopathy
+pip install python-docs-theme-lucit
 ```
 https://pypi.org/project/python-docs-theme-lucit
 
@@ -22,7 +22,7 @@ https://www.technopathy.club/2019/11/03/use-python-sphinx-on-github-pages-with-h
 ## Documentation
 Settings for source/conf.py:
 ```
-tml_theme = 'python_docs_theme_lucit'
+html_theme = 'python_docs_theme_lucit'
 html_context = {'github_repo_name': 'unicorn-binance-suite',
                 'github_user_name': 'LUCIT-Systems-and-Development',
                 'project_name': project}

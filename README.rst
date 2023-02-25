@@ -1,5 +1,5 @@
-Python Docs Sphinx Theme
-=========================
+Python Docs Sphinx Theme (LUCIT)
+================================
 
 This is the theme for the Python documentation.
 
@@ -19,6 +19,15 @@ Configuration options
 
 To use this theme, add the following to ``conf.py``:
 
-- ``html_theme = 'python_docs_theme'``
+- ``html_theme = 'python_docs_theme_lucit'``
 
 - ``html_sidebars``, defaults taken from http://www.sphinx-doc.org/en/stable/config.html#confval-html_sidebars
+
+
+
+
+# html_theme = 'python_docs_theme_lucit'
+# html_context = {'github_repo_name': 'unicorn-binance-suite',
+#                 'github_user_name': 'LUCIT-Systems-and-Development',
+#                 'project_name': project}
+#
