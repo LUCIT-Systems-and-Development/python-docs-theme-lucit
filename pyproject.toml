@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 # project metadata
 [project]
 name = "python-docs-theme-lucit"
-version = "1.2.9"
+version = "1.2.10"
 description = "The Sphinx theme for the CPython docs and related projects"
 readme = "README.md"
 urls.Code = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
