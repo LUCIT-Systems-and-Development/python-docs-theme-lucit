@@ -28,4 +28,4 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-python3 -m pip install --user --upgrade pip setuptools wheel twine tqdm
+python3 -m pip install --user --upgrade pip setuptools wheel twine tqdm build
