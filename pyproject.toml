@@ -5,14 +5,14 @@ build-backend = "flit_core.buildapi"
 # project metadata
 [project]
 name = "python-docs-theme-lucit"
-version = "1.4.3"
+version = "1.4.4"
 description = "The Sphinx theme for the CPython docs and related projects"
 readme = "README.md"
 urls.Code = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
 urls.Download = "https://pypi.org/project/python-docs-theme-lucit/"
 urls.Homepage = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit"
 urls."Issue tracker" = "https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit/issues"
-license.text = "PSF-2.0"
+license.text = "LSOSL"
 requires-python = ">=3.8"
 
 # Classifiers list: https://pypi.org/classifiers/
