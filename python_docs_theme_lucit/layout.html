@@ -23,8 +23,8 @@
                   {% if lucit %}
               <li><img src="{{ pathto('_static/' + theme_lucit_icon, 1) }}" alt="LUCIT Logo"
                        style="vertical-align: middle; margin-top: -1px"/></li>
-              <li><a href="https://docs.lucit.tech">Docs Index</a> | </li>
-              <li><a href="https://www.lucit.tech/{{github_repo_name}}.html">{{project_name}}</a>{{reldelim1}}</li>
+              <li><a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Docs Index</a> | </li>
+              <li><a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}">{{project_name}}</a>{{reldelim1}}</li>
                   {% endif %}
               {% endif %}
               {% if theme_root_include_title %}
@@ -67,12 +67,6 @@
 {%- block extrahead -%}
     <link rel="shortcut icon" type="image/png" href="{{ pathto('_static/' + theme_lucit_icon, 1) }}" />
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    {% if freshchat_src %}
-    <script
-        src='{{ freshchat_src }}'
-        chat='true'>
-    </script>
-    {% endif %}
     {%- if builder != "htmlhelp" %}
         {%- if not embedded %}
             <script type="text/javascript" src="{{ pathto('_static/copybutton.js', 1) }}"></script>
@@ -193,17 +187,13 @@
 
 {% block footer %}
     <div class="footer">
-    <a href="https://docs.lucit.tech">Index of all LUCIT Software Documentation</a><br />
+    <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; {% if theme_copyright_url or hasdoc('copyright') %}<a href="/license.html">{% endif %}{% trans %}Copyright{% endtrans %}{% if theme_copyright_url or hasdoc('copyright') %}</a>{% endif %} {{ copyright|e }}.
     {% if theme_license_url %}{% trans license_file=theme_license_url %}See <a href="/license.html">License</a> for more information.{% endtrans %}<br />{% endif %}
     {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
     {% if theme_issues_url %}{% trans %}<a href="https://github.com/{{ github_user_name }}/{{ github_repo_name }}/issues/new/choose">Found a bug</a>?{% endtrans %}{% endif %}
     <br />
     {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-        with <a href="https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit">python-docs-theme-lucit</a>
-        by <a href="https://www.lucit.tech">LUCIT Systems and Development</a>.
+        with <a href="https://github.com/LUCIT-Systems-and-Development/python-docs-theme-lucit">python-docs-theme-lucit</a>.
     </div>
-    {% if matomo_url %}
-    <img referrerpolicy="no-referrer-when-downgrade" src="{{ matomo_url }}" style="border:0" alt="" />
-    {% endif %}
 {% endblock %}
